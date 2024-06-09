@@ -2,8 +2,7 @@ defmodule TestLiveviewWeb.LightLive do
   use TestLiveviewWeb, :live_view
 
   def mount(_params, _session, socket) do
-    socket = assign(socket, brightness: 10)
-    {:ok, socket}
+    {:ok, assign(socket, brightness: 10)}
   end
 
   def render(assigns) do
@@ -26,11 +25,9 @@ defmodule TestLiveviewWeb.LightLive do
   end
 
   def handle_event("off", _, socket) do
-    socket = assign(socket, :brightness, 0)
-    {:noreply, socket}
+    {:noreply, assign(socket, :brightness, 0)}
   end
   def handle_event("on", _, socket) do
-    socket = assign(socket, :brightness, 100)
-    {:noreply, socket}
+    {:noreply, assign(socket, :brightness, 100)}
   end
 end
